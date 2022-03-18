@@ -3,7 +3,6 @@ import youtube_dl
 import webbrowser
 
 ydl_opts = {
-    'format': 'bestaudio/best', 
      'noplaylist' : True, 
 }
 
@@ -12,8 +11,8 @@ def youMenu():
     print()
     print('     ~ ~ ~ YouTube Downloader ~ ~ ~   ')
     print('\n\n')
-    print('   1. YouTube Video Download. (Upcoming) ')
-    print('   2. YouTube Audio BroweDownload.')
+    print('   1. YouTube Video Download. (Beta) ')
+    print('   2. YouTube Audio (Browser) Download.')
     print('   3. Main Menu.\n\n')
     Option = input('Select Option (1,2,3...) : ')
     if Option == '1':
@@ -25,7 +24,7 @@ def youMenu():
         print('\n\ntitle       : %s' %(meta['title']))
 
         print('\n\nSuccessfully Downloaded!!!')
-        os.chdir('cd/')
+        os.chdir('..')
 
         youMenu()
     
@@ -34,23 +33,24 @@ def youMenu():
         url = input('Enter YouTube Link : ')
 
 
-        ydl = youtube_dl.YoutubeDL({'outtmpl': '%(id)s.%(ext)s'})
+        ydl = youtube_dl.YoutubeDL(ydl_opts)
 
         with ydl:
             result = ydl.extract_info(
                 url,
                 download=False
             )
-            if 'entries' in result:
-                # Can be a playlist or a list of videos
-                audio = result['entries'][0]
-            else:
-                # Just a video
-                audio = result
+        if 'entries' in result:
+            # Can be a playlist or a list of videos
+            audio = result['entries'][0]
+        else:
+            # Just a video
+            audio = result
         
         link = audio['requested_formats'][-1]['url']
         webbrowser.open(link)
-        os.chdir('cd/')
+        print('Now Download From Browser....\n')
+        os.chdir('..')
 
         youMenu()
         
@@ -61,4 +61,3 @@ def youMenu():
         youMenu()
 
 
-youMenu()

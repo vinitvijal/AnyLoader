@@ -8,7 +8,7 @@ headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gec
 
 
 def instaPhoto(link):
-    os.chdir('InstaPhotos')
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0'}
     url = ((link)+'?__a=1')
     print(url)
     data = requests.get(url, headers=headers)
@@ -33,11 +33,13 @@ def instaPhoto(link):
     instaMenu()
 
 def instaVideo(link):
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0'}
     url = ((link)+'?__a=1')
     print(url)
     data = requests.get(url, headers=headers)
     if data.status_code == 200:
         print("valid")
+    
     jsonData = data.json()
 
     videolink = jsonData['graphql']['shortcode_media']['video_url']
@@ -62,18 +64,25 @@ def instaMenu():
     print('\n\n')
     choice = input('Select You Choice : ')
     if choice == '1':
+        os.chdir('InstaPhotos')
         link = input('Photo URL : ')
         instaPhoto(link)
+        os.chdir('..')
+
 
     elif choice == '2':
         link = input('Video URL : ')
         os.chdir('InstaVideos')
         instaVideo(link)
+        os.chdir('..')
+
 
     elif choice == '3':
         link = input('Reels URL : ')
         os.chdir('InstaReels')
         instaVideo(link)
+        os.chdir('..')
+
 
     elif choice == '4':
         print('\n\nUnder Development Wait for the Update!!!!\n')
