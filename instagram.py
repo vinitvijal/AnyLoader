@@ -80,7 +80,7 @@ def instaMenu():
         instaMenu()
     elif choice == '5':
         print('\n\n')
-        break
+        pass
     else:
         pass
 
