@@ -1,7 +1,5 @@
-import sys
 import requests
 import datetime
-import os
 
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0'}
 
@@ -64,24 +62,18 @@ def instaMenu():
     print('\n\n')
     choice = input('Select You Choice : ')
     if choice == '1':
-        os.chdir('InstaPhotos')
         link = input('Photo URL : ')
         instaPhoto(link)
-        os.chdir('..')
 
 
     elif choice == '2':
         link = input('Video URL : ')
-        os.chdir('InstaVideos')
         instaVideo(link)
-        os.chdir('..')
 
 
     elif choice == '3':
         link = input('Reels URL : ')
-        os.chdir('InstaReels')
         instaVideo(link)
-        os.chdir('..')
 
 
     elif choice == '4':
@@ -92,5 +84,3 @@ def instaMenu():
         pass
     else:
         pass
-
-instaMenu()

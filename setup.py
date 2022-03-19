@@ -1,6 +1,10 @@
 import sys
 from instagram import instaMenu
 from youtube import youMenu
+import os 
+
+os.chdir('Downloads')
+
 
 def init():
     print()
@@ -24,6 +28,8 @@ def mainMenu():
     elif choice == 2:
         instaMenu()
     elif choice == 3:
+        print('''\n\nThanks For Using AnyLoader v0.1.0 
+        See You Soon, Byy''')
         sys.exit()
     mainMenu()
 init()
