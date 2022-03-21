@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouMp4 - Vinu Code.</title>
+    <link rel="icon"href="{% static 'favicon.ico' %}">    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@600&family=PT+Serif:wght@700&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+</head>
+<body>
+
+    <div class="header">
+        <div onclick="home()" style="cursor: pointer">
+            <span class="headText" ><span style="color:rgb(169, 216, 169);">Insta</span>Gram Downloader - <span style="font-size: medium;">Vinu Code.</span></span>
+        </div>
+    </div>
+    <div class="main">
+        
+    </div>
+
+
+    <script>
+        function home() {
+                   window.location.href = '/insta'
+               };
+
+    </script>
+
+
+    
+<footer style="display: flex; justify-content: center; align-items: center; flex-direction: column">
+    <div>
+        <h4> Version : 0.1.0b </h4>
+    </div>
+    <div>
+        <h4>(Contact)  Instagram  :  <a href="https://www.instagram.com/its.vinit_vijal__/" style="text-decoration: none; color: darkblue;">Vinit Vijal</a></h4>
+    </div>
+</footer>
+    
+</body>
+</html>

@@ -1,8 +1,10 @@
 import requests
 import datetime
+import os
 
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0'}
 
+os.chdir('Downloads')
 
 
 def instaPhoto(link):
@@ -84,3 +86,8 @@ def instaMenu():
         pass
     else:
         pass
+
+
+
+if __name__ == '__main__':
+    instaMenu()
