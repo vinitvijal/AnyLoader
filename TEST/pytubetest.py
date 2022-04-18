@@ -1,6 +1,4 @@
-from pytube import YouTube
+a = 'https://www.instagram.com/p/CaAYYJKK-lv/'
+b = a[0:39]
 
-link = 'https://youtu.be/Wa6it7j_OHY'
-yt = YouTube(link)
-
-print(yt.)
+print(b)
